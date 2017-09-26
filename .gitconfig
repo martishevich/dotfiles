@@ -1,0 +1,8 @@
+[user]
+	email = oleg.martishevich@gmail.com
+	name = Martishevich Oleg
+[core]
+	autocrlf = input
+	safecrlf = true
+[credential]
+	helper = cache --timeout=3600
