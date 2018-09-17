@@ -5,6 +5,7 @@
 	autocrlf = input
 	safecrlf = true
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	editor = nvim
 [credential]
 	helper = cache --timeout=3600
 [color]
