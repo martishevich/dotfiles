@@ -1,6 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')                                   
 
-Plug 'scrooloose/nerdtree'                                                  
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }                                                  
 Plug 'Shougo/deoplete.nvim'                                                 
 Plug 'neomake/neomake'                                                      
 Plug 'flowtype/vim-flow'                                                    
