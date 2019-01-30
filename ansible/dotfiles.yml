@@ -1,20 +1,14 @@
 ---
 - hosts: all
-  vars:
-    nvim_dotfiles_directory: "{{ curdir }}/nvim/"
   gather_facts: no
   tasks:
     - file:
         dest: ~/.config/nvim
         state: directory
 
-    - command: "ls {{ nvim_dotfiles_directory }}"
-      register: list_of_configs
-
     - file:
-        src: "{{ nvim_dotfiles_directory }}{{ item }}"
-        dest: "{{ lookup('env', 'HOME') }}/.config/nvim/{{ item }}"
+        src: "{{ curdir }}/nvim/init.vim"
+        dest: "{{ lookup('env', 'HOME') }}/.config/nvim/init.vim"
         state: link
-      with_items: "{{ list_of_configs.stdout_lines }}"
       become: yes
 
