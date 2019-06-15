@@ -8,3 +8,13 @@ install_dotfiles:
 
 install_nvim:
 	ansible-playbook ansible/nvim.yml -i ansible/local -vvv -K
+
+
+docker-build:
+	docker build . -t martishevich/dotfiles
+
+docker-push:
+	docker push martishevich/dotfiles
+
+docker-bash:
+	docker run -it -v ~/:/app martishevich/dotfiles bash

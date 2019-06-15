@@ -24,3 +24,14 @@
         force: yes
         dest: "{{ autoload_path }}/plug.vim"
         url: "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+
+    - composer:
+        global_command: true
+        command: require
+        arguments: "{{ item }}"
+      ignore_errors: true
+      become: true
+      with_items:
+        - "squizlabs/php_codesniffer"
+        - "phpmd/phpmd"
+        - "felixfbecker/language-server"
