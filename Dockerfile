@@ -13,4 +13,6 @@ RUN curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 COPY nvim/init.vim /root/.config/nvim/init.vim
 
+RUN nvim -i NONE -c PlugInstall -c quitall
+
 CMD ["nvim"]
